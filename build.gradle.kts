@@ -1,20 +1,21 @@
 import org.gradle.kotlin.dsl.support.listFilesOrdered
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.binary.compatibility.validator)
     `maven-publish`
-    signing
+//    signing
 }
 
-group = "app.revanced"
+group = "io.github.bholeykabhakt"
 
 repositories {
     mavenCentral()
     mavenLocal()
     google()
     maven {
-        // A repository must be speficied for some reason. "registry" is a dummy.
+        // A repository must be specified for some reason. "registry" is a dummy.
         url = uri("https://maven.pkg.github.com/revanced/registry")
         credentials {
             username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
@@ -25,24 +26,31 @@ repositories {
 
 dependencies {
     implementation(libs.revanced.patcher)
+    implementation(libs.revanced.patches)
     implementation(libs.smali)
 }
 
 kotlin {
-    jvmToolchain(11)
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+    }
+}
+
+java {
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks {
     withType(Jar::class) {
         manifest {
-            attributes["Name"] = "ReVanced Patches template"
-            attributes["Description"] = "Patches template for ReVanced."
+            attributes["Name"] = "Xtra ReVanced Patches"
+            attributes["Description"] = "Xtra Patches template for ReVanced."
             attributes["Version"] = version
             attributes["Timestamp"] = System.currentTimeMillis().toString()
-            attributes["Source"] = "git@github.com:revanced/revanced-patches-template.git"
-            attributes["Author"] = "ReVanced"
-            attributes["Contact"] = "contact@revanced.app"
-            attributes["Origin"] = "https://revanced.app"
+            attributes["Source"] = "git@github.com:bholeykabhakt/revanced-patches-xtra.git"
+            attributes["Author"] = "BholeyKaBhakt"
+            attributes["Contact"] = "bholeykabhakt@proton.me"
+            attributes["Origin"] = "https://bholeykabhakt.github.io"
             attributes["License"] = "GNU General Public License v3.0"
         }
     }
@@ -83,7 +91,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/revanced/revanced-patches-template")
+            url = uri("https://maven.pkg.github.com/bholeykabhakt/revanced-patches-xtra")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
@@ -96,9 +104,9 @@ publishing {
             from(components["java"])
 
             pom {
-                name = "ReVanced Patches template"
-                description = "Patches template for ReVanced."
-                url = "https://revanced.app"
+                name = "ReVanced Patches Xtra"
+                description = "Xtra Patches template for ReVanced."
+                url = "https://bholeykabhakt.github.io"
 
                 licenses {
                     license {
@@ -108,23 +116,23 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = "ReVanced"
-                        name = "ReVanced"
-                        email = "contact@revanced.app"
+                        id = "BholeyKaBhakt"
+                        name = "BholeyKaBhakt"
+                        email = "bholeykabhakt@proton.me"
                     }
                 }
                 scm {
-                    connection = "scm:git:git://github.com/revanced/revanced-patches-template.git"
-                    developerConnection = "scm:git:git@github.com:revanced/revanced-patches-template.git"
-                    url = "https://github.com/revanced/revanced-patches-template"
+                    connection = "scm:git:git://github.com/bholeykabhakt/revanced-patches-xtra.git"
+                    developerConnection = "scm:git:git@github.com:bholeykabhakt/revanced-patches-xtra.git"
+                    url = "https://github.com/revanced/revanced-patches-xtra"
                 }
             }
         }
     }
 }
 
-signing {
-    useGpgCmd()
-
-    sign(publishing.publications["revanced-patches-publication"])
-}
+//signing {
+//    useGpgCmd()
+//
+//    sign(publishing.publications["revanced-patches-publication"])
+//}
