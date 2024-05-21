@@ -1,3 +1,10 @@
+# 1.0.0 (2024-05-21)
+
+
+### Features
+
+* add `Bypass Blocks Limit` patch for `Automate` ([a5756da](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/a5756da5d4f122b16509c4e980ffabd4586ae75d))
+
 # 1.0.0-dev.1 (2024-05-21)
 
 
