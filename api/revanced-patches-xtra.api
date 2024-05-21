@@ -1,3 +1,9 @@
+public final class io/github/bholeykabhakt/patches/automate/BypassBlocksLimit : app/revanced/patcher/patch/BytecodePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/automate/BypassBlocksLimit;
+	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+}
+
 public final class io/github/bholeykabhakt/patches/example/ExamplePatch : app/revanced/patcher/patch/BytecodePatch {
 	public static final field INSTANCE Lio/github/bholeykabhakt/patches/example/ExamplePatch;
 	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
