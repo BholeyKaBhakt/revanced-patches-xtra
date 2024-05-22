@@ -22,3 +22,9 @@ public final class io/github/bholeykabhakt/patches/autosync/temperdetection/Disa
 	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
 }
 
+public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionOld : app/revanced/patcher/patch/BytecodePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionOld;
+	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+}
+
