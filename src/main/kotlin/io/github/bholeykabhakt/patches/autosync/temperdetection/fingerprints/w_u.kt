@@ -1,4 +1,4 @@
-package io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints
+package io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints
 
 import app.revanced.patcher.fingerprint.MethodFingerprint
 

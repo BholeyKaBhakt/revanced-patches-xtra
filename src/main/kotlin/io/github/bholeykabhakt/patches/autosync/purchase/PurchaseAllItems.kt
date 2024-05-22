@@ -11,24 +11,23 @@ import com.android.tools.smali.dexlib2.Opcode
 
 internal object IsAccountTypePurchasedFingerprint : MethodFingerprint(
     "Z",
+    parameters = listOf("Ljava/lang/String;"),
     customFingerprint = { methodDef, _ ->
         methodDef.definingClass == "Lcom/ttxapps/autosync/iab/LicenseManager;"
     },
-    strings = listOf("accountType", "prefs"),
+    strings = listOf("accountType"),
     opcodes = listOf(
-        Opcode.INVOKE_STATIC,
-        Opcode.SGET_OBJECT,
-        Opcode.IF_EQZ,
         Opcode.INVOKE_DIRECT,
         Opcode.MOVE_RESULT_OBJECT,
         Opcode.CONST_4,
-        Opcode.INVOKE_INTERFACE
+        Opcode.INVOKE_INTERFACE,
+        Opcode.MOVE_RESULT
     )
 )
 
 @Patch(
     name = "Purchase All Items",
-    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["0.9.52-beta"])]
+    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
 )
 
 object PurchaseAllItems : BytecodePatch(

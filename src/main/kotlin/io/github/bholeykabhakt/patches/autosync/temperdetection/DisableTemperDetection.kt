@@ -2,40 +2,54 @@ package io.github.bholeykabhakt.patches.autosync.temperdetection
 
 import app.revanced.patcher.data.BytecodeContext
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
+import app.revanced.patcher.fingerprint.MethodFingerprint
 import app.revanced.patcher.patch.BytecodePatch
 import app.revanced.patcher.patch.annotation.CompatiblePackage
 import app.revanced.patcher.patch.annotation.Patch
 import app.revanced.util.exception
-import io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints.MainActivityOnResume
-import io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints.StatusFragmentOnResume
+
+internal object TemperDetectionVarHGetterFingerprint : MethodFingerprint(
+    parameters = listOf(),
+    returnType = "Z",
+    customFingerprint = { methodDef, _ ->
+        methodDef.definingClass == "Lcom/ttxapps/autosync/sync/d\$a;" && methodDef.name == "f"
+    }
+)
+
+internal object TemperDetectionVarZGetterFingerprint : MethodFingerprint(
+    parameters = listOf(),
+    returnType = "Z",
+    customFingerprint = { methodDef, _ ->
+        methodDef.definingClass.startsWith("Lcom/ttxapps/autosync/sync/SyncState") && methodDef.name == "z"
+    }
+)
+
 
 @Patch(
     name = "Disable Temper Detection",
-    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["0.9.52-beta"])]
+    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["6.4.3"])]
 )
 
 object DisableTemperDetection : BytecodePatch(
-    setOf(StatusFragmentOnResume, MainActivityOnResume)
+    setOf(TemperDetectionVarHGetterFingerprint, TemperDetectionVarZGetterFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {
 
-        // z.g = false;
-        StatusFragmentOnResume.result?.mutableMethod?.addInstructions(
-            1,
-            """
+        val returnFalseInstructions = """
                const/4 v0, 0x0
-               sput-boolean v0, Lcom/ttxapps/autosync/sync/z;->g:Z
+               return v0
             """
-        ) ?: throw StatusFragmentOnResume.exception
 
-        // this.syncState.a = false;
-        MainActivityOnResume.result?.mutableMethod?.addInstructions(
-            1,
-            """
-               const/4 v1, 0x0
-               iget-object v0, p0, Lcom/ttxapps/autosync/app/MainActivity;->syncState:Lcom/ttxapps/autosync/sync/b0;
-               iput-boolean v1, v0, Lcom/ttxapps/autosync/sync/b0;->a:Z
-            """
-        ) ?: throw StatusFragmentOnResume.exception
+        // d$a.f() = false (just like old z.g = false but on getter)
+        TemperDetectionVarHGetterFingerprint.result?.mutableMethod?.addInstructions(
+            0,
+            returnFalseInstructions
+        ) ?: throw TemperDetectionVarHGetterFingerprint.exception
+
+        // SyncState.z() = false (just like old b0.a = false but on getter)
+        TemperDetectionVarZGetterFingerprint.result?.mutableMethod?.addInstructions(
+            0,
+            returnFalseInstructions
+        ) ?: throw TemperDetectionVarZGetterFingerprint.exception
     }
 }

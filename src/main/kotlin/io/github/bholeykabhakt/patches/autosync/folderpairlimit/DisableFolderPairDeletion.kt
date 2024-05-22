@@ -7,31 +7,17 @@ import app.revanced.patcher.patch.annotation.CompatiblePackage
 import app.revanced.patcher.patch.annotation.Patch
 import app.revanced.util.exception
 import io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints.SyncSettingsBFingerprint
-import io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints.SyncSettingsJFingerprint
-import io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints.WUFingerprint
+import io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints.SyncSettingsGetLastUpdatedAtFingerprint
 
 @Patch(
     name = "Disable Folder Pair Deletion",
-    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["0.9.52-beta"])]
+    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
 )
 
 object DisableFolderPairDeletion : BytecodePatch(
-    setOf(WUFingerprint, SyncSettingsBFingerprint, SyncSettingsJFingerprint)
+    setOf(SyncSettingsBFingerprint, SyncSettingsGetLastUpdatedAtFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {
-
-        // z.g = false;
-        // this.g.a = false;
-        WUFingerprint.result?.mutableMethod?.addInstructions(
-            0,
-            """
-               const/4 v0, 0x0
-               sput-boolean v0, Lcom/ttxapps/autosync/sync/z;->g:Z
-               const/4 v1, 0x0
-               iget-object v0, p0, Lcom/ttxapps/autosync/sync/w;->g:Lcom/ttxapps/autosync/sync/b0;
-               iput-boolean v1, v0, Lcom/ttxapps/autosync/sync/b0;->a:Z
-            """
-        ) ?: throw WUFingerprint.exception
 
         // don't run the method that removes all sync pair but one
         SyncSettingsBFingerprint.result?.mutableMethod?.addInstructions(
@@ -41,15 +27,15 @@ object DisableFolderPairDeletion : BytecodePatch(
             """
         ) ?: throw SyncSettingsBFingerprint.exception
 
-        // return pref_last_updated time in near future
+        // return PREF_LAST_UPDATED_AT time in near future
         // stops sync pair list from being cleared
-        SyncSettingsJFingerprint.result?.mutableMethod?.addInstructions(
+        SyncSettingsGetLastUpdatedAtFingerprint.result?.mutableMethod?.addInstructions(
             0,
             """
                invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
                move-result-wide v0
                return-wide v0
             """
-        ) ?: throw SyncSettingsJFingerprint.exception
+        ) ?: throw SyncSettingsGetLastUpdatedAtFingerprint.exception
     }
 }
