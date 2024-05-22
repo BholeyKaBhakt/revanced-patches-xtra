@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.1.0...v1.2.0) (2024-05-22)
+
+
+### Features
+
+* update patches for `autosync` v6.4.3 ([cbf9a54](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/cbf9a54aae12e59eac74061a30cdc695666871e2))
+
 # [1.2.0-dev.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.1.0...v1.2.0-dev.1) (2024-05-22)
 
 
