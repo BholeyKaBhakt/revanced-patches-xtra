@@ -87,49 +87,49 @@ tasks {
     }
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/bholeykabhakt/revanced-patches-xtra")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-
-    publications {
-        create<MavenPublication>("revanced-patches-publication") {
-            from(components["java"])
-
-            pom {
-                name = "ReVanced Patches Xtra"
-                description = "Xtra Patches template for ReVanced."
-                url = "https://bholeykabhakt.github.io"
-
-                licenses {
-                    license {
-                        name = "GNU General Public License v3.0"
-                        url = "https://www.gnu.org/licenses/gpl-3.0.en.html"
-                    }
-                }
-                developers {
-                    developer {
-                        id = "BholeyKaBhakt"
-                        name = "BholeyKaBhakt"
-                        email = "bholeykabhakt@proton.me"
-                    }
-                }
-                scm {
-                    connection = "scm:git:git://github.com/bholeykabhakt/revanced-patches-xtra.git"
-                    developerConnection = "scm:git:git@github.com:bholeykabhakt/revanced-patches-xtra.git"
-                    url = "https://github.com/revanced/revanced-patches-xtra"
-                }
-            }
-        }
-    }
-}
+//publishing {
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//            url = uri("https://maven.pkg.github.com/bholeykabhakt/revanced-patches-xtra")
+//            credentials {
+//                username = System.getenv("GITHUB_ACTOR")
+//                password = System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
+//
+//    publications {
+//        create<MavenPublication>("revanced-patches-publication") {
+//            from(components["java"])
+//
+//            pom {
+//                name = "ReVanced Patches Xtra"
+//                description = "Xtra Patches template for ReVanced."
+//                url = "https://bholeykabhakt.github.io"
+//
+//                licenses {
+//                    license {
+//                        name = "GNU General Public License v3.0"
+//                        url = "https://www.gnu.org/licenses/gpl-3.0.en.html"
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id = "BholeyKaBhakt"
+//                        name = "BholeyKaBhakt"
+//                        email = "bholeykabhakt@proton.me"
+//                    }
+//                }
+//                scm {
+//                    connection = "scm:git:git://github.com/bholeykabhakt/revanced-patches-xtra.git"
+//                    developerConnection = "scm:git:git@github.com:bholeykabhakt/revanced-patches-xtra.git"
+//                    url = "https://github.com/revanced/revanced-patches-xtra"
+//                }
+//            }
+//        }
+//    }
+//}
 
 //signing {
 //    useGpgCmd()

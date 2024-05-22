@@ -22,5 +22,10 @@ jobs:
         with:
           destination_branch: 'main'
           pr_title: 'chore: ${{ env.MESSAGE }}'
-          pr_body: 'This pull request will ${{ env.MESSAGE }}.'
+          pr_body: |
+            This pull request will ${{ env.MESSAGE }}.
+            
+            ## Dependencies before merge
+
+            - [ ] https://github.com/bholeykabhakt/revanced-integrations
           pr_draft: true
