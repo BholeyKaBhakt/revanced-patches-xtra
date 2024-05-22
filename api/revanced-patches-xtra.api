@@ -4,3 +4,21 @@ public final class io/github/bholeykabhakt/patches/automate/BypassBlocksLimit : 
 	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
 }
 
+public final class io/github/bholeykabhakt/patches/autosync/folderpairlimit/DisableFolderPairDeletion : app/revanced/patcher/patch/BytecodePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/folderpairlimit/DisableFolderPairDeletion;
+	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+}
+
+public final class io/github/bholeykabhakt/patches/autosync/purchase/PurchaseAllItems : app/revanced/patcher/patch/BytecodePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/purchase/PurchaseAllItems;
+	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+}
+
+public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetection : app/revanced/patcher/patch/BytecodePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetection;
+	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+}
+
