@@ -127,3 +127,8 @@ node_modules/
 
 # Ignore IDEA files
 .idea/
+
+# misc
+binaries/
+.DS_Store
+local.properties
