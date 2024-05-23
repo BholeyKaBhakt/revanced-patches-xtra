@@ -1,3 +1,9 @@
+public final class io/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatch : app/revanced/patcher/patch/ResourcePatch {
+	public static final field INSTANCE Lio/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatch;
+	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+	public fun execute (Lapp/revanced/patcher/data/ResourceContext;)V
+}
+
 public final class io/github/bholeykabhakt/patches/automate/BypassBlocksLimit : app/revanced/patcher/patch/BytecodePatch {
 	public static final field INSTANCE Lio/github/bholeykabhakt/patches/automate/BypassBlocksLimit;
 	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
