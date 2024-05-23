@@ -1,3 +1,10 @@
+# [1.3.0-dev.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.2.0...v1.3.0-dev.1) (2024-05-23)
+
+
+### Features
+
+* add `Disable Firebase Analytics/Crashlytics` patch ([698d0cc](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/698d0ccbdebc34b7a35ada1e8298ff8142753fa9))
+
 # [1.2.0](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.1.0...v1.2.0) (2024-05-22)
 
 

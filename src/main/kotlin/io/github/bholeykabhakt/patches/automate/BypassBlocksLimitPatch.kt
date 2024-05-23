@@ -13,7 +13,7 @@ import io.github.bholeykabhakt.patches.automate.fingerprints.IsBlockLimitReached
     compatiblePackages = [CompatiblePackage("com.llamalab.automate")]
 )
 
-object BypassBlocksLimit : BytecodePatch(
+object BypassBlocksLimitPatch : BytecodePatch(
     setOf(IsBlockLimitReachedFingerPrint)
 ) {
     override fun execute(context: BytecodeContext) {
