@@ -37,7 +37,7 @@ object DisableTemperDetectionOld : BytecodePatch(
                iget-object v0, p0, Lcom/ttxapps/autosync/app/MainActivity;->syncState:Lcom/ttxapps/autosync/sync/b0;
                iput-boolean v1, v0, Lcom/ttxapps/autosync/sync/b0;->a:Z
             """
-        ) ?: throw StatusFragmentOnResume.exception
+        ) ?: throw MainActivityOnResume.exception
 
         // z.g = false;
         // this.g.a = false; {b0.a}
