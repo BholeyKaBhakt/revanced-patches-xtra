@@ -15,7 +15,7 @@ import io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints.WUF
     compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["0.9.52-beta"])]
 )
 
-object DisableTemperDetectionOld : BytecodePatch(
+object DisableTemperDetectionOldPatch : BytecodePatch(
     setOf(StatusFragmentOnResume, MainActivityOnResume, WUFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {

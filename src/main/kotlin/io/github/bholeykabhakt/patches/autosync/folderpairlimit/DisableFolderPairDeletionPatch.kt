@@ -14,7 +14,7 @@ import io.github.bholeykabhakt.patches.autosync.folderpairlimit.fingerprints.Syn
     compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
 )
 
-object DisableFolderPairDeletion : BytecodePatch(
+object DisableFolderPairDeletionPatch : BytecodePatch(
     setOf(SyncSettingsBFingerprint, SyncSettingsGetLastUpdatedAtFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {

@@ -30,7 +30,7 @@ internal object TemperDetectionVarZGetterFingerprint : MethodFingerprint(
     compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["6.4.3"])]
 )
 
-object DisableTemperDetection : BytecodePatch(
+object DisableTemperDetectionPatch : BytecodePatch(
     setOf(TemperDetectionVarHGetterFingerprint, TemperDetectionVarZGetterFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {

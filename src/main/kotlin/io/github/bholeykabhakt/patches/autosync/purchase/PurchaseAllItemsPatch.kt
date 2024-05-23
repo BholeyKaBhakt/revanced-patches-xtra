@@ -30,7 +30,7 @@ internal object IsAccountTypePurchasedFingerprint : MethodFingerprint(
     compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
 )
 
-object PurchaseAllItems : BytecodePatch(
+object PurchaseAllItemsPatch : BytecodePatch(
     setOf(IsAccountTypePurchasedFingerprint)
 ) {
     override fun execute(context: BytecodeContext) {
