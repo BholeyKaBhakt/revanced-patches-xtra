@@ -27,7 +27,8 @@ object DisableAnalyticsPatch : ResourcePatch() {
 
             val filteredMetadata = metadataSequence.filter {
                 it.getAttribute("android:name")
-                    .startsWith("firebase_") || it.getAttribute("android:name")
+                    .startsWith("firebase_crashlytics_") || it.getAttribute("android:name")
+                    .startsWith("firebase_analytics_") || it.getAttribute("android:name")
                     .startsWith("google_analytics_")
             }
 
