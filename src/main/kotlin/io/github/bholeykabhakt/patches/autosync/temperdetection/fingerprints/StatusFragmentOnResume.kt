@@ -4,6 +4,6 @@ import app.revanced.patcher.fingerprint.MethodFingerprint
 
 internal object StatusFragmentOnResume : MethodFingerprint(
     customFingerprint = { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/status/StatusFragment;" && methodDef.name== "onResume"
+        methodDef.definingClass == "Lcom/ttxapps/autosync/status/StatusFragment;" && methodDef.name == "onResume"
     }
 )

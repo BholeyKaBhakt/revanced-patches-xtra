@@ -22,7 +22,8 @@ object DisableAnalyticsPatch : ResourcePatch() {
 
             val metadataNodes = applicationNode.getElementsByTagName("meta-data")
 
-            val metadataSequence = (0 until metadataNodes.length).asSequence().map { metadataNodes.item(it) as Element }
+            val metadataSequence = (0 until metadataNodes.length).asSequence()
+                .map { metadataNodes.item(it) as Element }
 
             val filteredMetadata = metadataSequence.filter { it.getAttribute("android:name").startsWith("firebase_") }
 

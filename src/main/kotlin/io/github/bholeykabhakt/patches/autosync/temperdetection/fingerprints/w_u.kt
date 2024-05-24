@@ -4,9 +4,9 @@ import app.revanced.patcher.fingerprint.MethodFingerprint
 
 
 internal object WUFingerprint : MethodFingerprint(
-    parameters = listOf("Ljava/lang/String;","Ljava/lang/String;"),
+    parameters = listOf("Ljava/lang/String;", "Ljava/lang/String;"),
     returnType = "V",
     customFingerprint = { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/sync/w;" && methodDef.name== "u"
+        methodDef.definingClass == "Lcom/ttxapps/autosync/sync/w;" && methodDef.name == "u"
     }
 )
