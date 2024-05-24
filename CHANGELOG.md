@@ -1,3 +1,10 @@
+# [1.4.0-dev.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.3.0...v1.4.0-dev.1) (2024-05-24)
+
+
+### Features
+
+* update `Disable Firebase(Google) Analytics` patch ([49bb66f](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/49bb66f13db69ec90504f234e803bac78585fb99))
+
 # [1.3.0](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.2.0...v1.3.0) (2024-05-23)
 
 
