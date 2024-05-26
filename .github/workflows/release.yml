@@ -27,6 +27,8 @@ jobs:
           cache: 'gradle'
 
       - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew build clean
 
       - name: Setup Node.js
