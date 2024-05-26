@@ -1,3 +1,12 @@
+## [1.4.1-dev.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.4.0...v1.4.1-dev.1) (2024-05-26)
+
+
+### Bug Fixes
+
+* **all:** update `Disable Firebase(Google) Analytics` patch ([eb75c6b](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/eb75c6b40594605e921c033b47f20ec012f04e29))
+* **autosync:** don't restrict `DisableTemperDetectionPatch` to `v6.4.3` ([3acce42](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/3acce425c38bec9d40b5544d3191b7832304501e))
+* **autosync:** drop support for `v0.9.52-beta` ([5fc4e7f](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/5fc4e7f20f25a0a325a431bd9af673697c59a60f))
+
 # [1.4.0](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.3.0...v1.4.0) (2024-05-24)
 
 
