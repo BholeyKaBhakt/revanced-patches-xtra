@@ -2,32 +2,17 @@ package io.github.bholeykabhakt.patches.autosync.temperdetection
 
 import app.revanced.patcher.data.BytecodeContext
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
-import app.revanced.patcher.fingerprint.MethodFingerprint
 import app.revanced.patcher.patch.BytecodePatch
 import app.revanced.patcher.patch.annotation.CompatiblePackage
 import app.revanced.patcher.patch.annotation.Patch
 import app.revanced.util.exception
-
-internal object TemperDetectionVarHGetterFingerprint : MethodFingerprint(
-    parameters = listOf(),
-    returnType = "Z",
-    customFingerprint = { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/sync/d\$a;" && methodDef.name == "f"
-    }
-)
-
-internal object TemperDetectionVarZGetterFingerprint : MethodFingerprint(
-    parameters = listOf(),
-    returnType = "Z",
-    customFingerprint = { methodDef, _ ->
-        methodDef.definingClass.startsWith("Lcom/ttxapps/autosync/sync/SyncState") && methodDef.name == "z"
-    }
-)
+import io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints.TemperDetectionVarHGetterFingerprint
+import io.github.bholeykabhakt.patches.autosync.temperdetection.fingerprints.TemperDetectionVarZGetterFingerprint
 
 
 @Patch(
     name = "Disable Temper Detection",
-    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync", ["6.4.3"])]
+    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
 )
 
 object DisableTemperDetectionPatch : BytecodePatch(
