@@ -33,14 +33,12 @@ object DisableAnalyticsPatch : ResourcePatch() {
             }
 
             filteredMetadata.forEach { element ->
-                when (element.getAttribute("android:name")) {
-                    "firebase_analytics_collection_deactivated" -> element.setAttribute(
+                if (element.getAttribute("android:name").endsWith("_deactivated"))
+                    element.setAttribute(
                         "android:value",
                         "true"
                     )
-
-                    else -> element.setAttribute("android:value", "false")
-                }
+                else element.setAttribute("android:value", "false")
             }
         }
     }

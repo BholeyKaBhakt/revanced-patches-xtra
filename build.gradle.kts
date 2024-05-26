@@ -5,10 +5,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.binary.compatibility.validator)
     `maven-publish`
-//    signing
 }
-
-group = "io.github.bholeykabhakt"
 
 repositories {
     mavenCentral()
