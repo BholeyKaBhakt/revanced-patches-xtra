@@ -22,12 +22,6 @@ public final class io/github/bholeykabhakt/patches/autosync/purchase/PurchaseAll
 	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
 }
 
-public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionOldPatch : app/revanced/patcher/patch/BytecodePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionOldPatch;
-	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
-}
-
 public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionPatch : app/revanced/patcher/patch/BytecodePatch {
 	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionPatch;
 	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
