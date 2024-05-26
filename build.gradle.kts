@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.binary.compatibility.validator)
-    `maven-publish`
 }
 
 repositories {
@@ -75,11 +74,5 @@ tasks {
                 commandLine = listOf("zip", "-u", patchesJar, "classes.dex")
             }
         }
-    }
-
-    // Needed by gradle-semantic-release-plugin.
-    // Tracking: https://github.com/KengoTODA/gradle-semantic-release-plugin/issues/435
-    publish {
-        dependsOn("buildDexJar")
     }
 }
