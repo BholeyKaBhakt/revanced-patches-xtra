@@ -1,45 +1,41 @@
 package io.github.bholeykabhakt.patches.autosync.purchase
 
-import app.revanced.patcher.data.BytecodeContext
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
-import app.revanced.patcher.fingerprint.MethodFingerprint
-import app.revanced.patcher.patch.BytecodePatch
-import app.revanced.patcher.patch.annotation.CompatiblePackage
-import app.revanced.patcher.patch.annotation.Patch
-import app.revanced.util.exception
+import app.revanced.patcher.fingerprint
+import app.revanced.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
 
-internal object IsAccountTypePurchasedFingerprint : MethodFingerprint(
-    "Z",
-    parameters = listOf("Ljava/lang/String;"),
-    customFingerprint = { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/iab/LicenseManager;"
-    },
-    strings = listOf("accountType"),
-    opcodes = listOf(
+internal val isAccountTypePurchasedFingerprint = fingerprint {
+    returns("Z")
+    parameters("Ljava/lang/String;")
+    strings("accountType")
+    opcodes(
         Opcode.INVOKE_DIRECT,
         Opcode.MOVE_RESULT_OBJECT,
         Opcode.CONST_4,
         Opcode.INVOKE_INTERFACE,
         Opcode.MOVE_RESULT
     )
-)
+    custom { methodDef, _ ->
+        methodDef.definingClass == "Lcom/ttxapps/autosync/iab/LicenseManager;"
+    }
+}
 
-@Patch(
+@Suppress("unused")
+val purchaseAllItemsPatch = bytecodePatch(
     name = "Purchase All Items",
-    compatiblePackages = [CompatiblePackage("com.ttxapps.autosync")]
-)
-
-object PurchaseAllItemsPatch : BytecodePatch(
-    setOf(IsAccountTypePurchasedFingerprint)
 ) {
-    override fun execute(context: BytecodeContext) {
-        IsAccountTypePurchasedFingerprint.result?.mutableMethod?.addInstructions(
+    compatibleWith("com.ttxapps.autosync")
+
+    val isAccountTypePurchasedMatch by isAccountTypePurchasedFingerprint()
+
+    execute {
+        isAccountTypePurchasedMatch.mutableMethod.addInstructions(
             0,
             """
                const/4 v0, 0x1
                return v0
             """
-        ) ?: throw IsAccountTypePurchasedFingerprint.exception
+        )
     }
 }

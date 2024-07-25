@@ -1,30 +1,20 @@
-public final class io/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatch : app/revanced/patcher/patch/ResourcePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatch;
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
-	public fun execute (Lapp/revanced/patcher/data/ResourceContext;)V
+public final class io/github/bholeykabhakt/patches/all/disableanalytics/DisableAnalyticsPatchKt {
+	public static final fun getDisableAnalyticsPatch ()Lapp/revanced/patcher/patch/ResourcePatch;
 }
 
-public final class io/github/bholeykabhakt/patches/automate/BypassBlocksLimitPatch : app/revanced/patcher/patch/BytecodePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/automate/BypassBlocksLimitPatch;
-	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+public final class io/github/bholeykabhakt/patches/automate/BypassBlocksLimitPatchKt {
+	public static final fun getBypassBlocksLimitPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class io/github/bholeykabhakt/patches/autosync/folderpairlimit/DisableFolderPairDeletionPatch : app/revanced/patcher/patch/BytecodePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/folderpairlimit/DisableFolderPairDeletionPatch;
-	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+public final class io/github/bholeykabhakt/patches/autosync/folderpairlimit/DisableFolderPairDeletionPatchKt {
+	public static final fun getDisableFolderPairDeletionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class io/github/bholeykabhakt/patches/autosync/purchase/PurchaseAllItemsPatch : app/revanced/patcher/patch/BytecodePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/purchase/PurchaseAllItemsPatch;
-	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+public final class io/github/bholeykabhakt/patches/autosync/purchase/PurchaseAllItemsPatchKt {
+	public static final fun getPurchaseAllItemsPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionPatch : app/revanced/patcher/patch/BytecodePatch {
-	public static final field INSTANCE Lio/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionPatch;
-	public fun execute (Lapp/revanced/patcher/data/BytecodeContext;)V
-	public synthetic fun execute (Lapp/revanced/patcher/data/Context;)V
+public final class io/github/bholeykabhakt/patches/autosync/temperdetection/DisableTemperDetectionPatchKt {
+	public static final fun getDisableTemperDetectionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
