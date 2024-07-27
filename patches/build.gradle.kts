@@ -3,7 +3,7 @@ group = "io.github.bholeykabhakt"
 patches {
     about {
         name = "Xtra ReVanced Patches"
-        description = "Xtra Patches template for ReVanced."
+        description = "Xtra Patches for ReVanced."
         source = "git@github.com:bholeykabhakt/revanced-patches-xtra.git"
         author = "BholeyKaBhakt"
         contact = "bholeykabhakt@proton.me"

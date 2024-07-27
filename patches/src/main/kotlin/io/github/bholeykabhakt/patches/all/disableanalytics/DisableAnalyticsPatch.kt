@@ -4,7 +4,10 @@ import app.revanced.patcher.patch.resourcePatch
 import org.w3c.dom.Element
 
 @Suppress("unused")
-val disableAnalyticsPatch = resourcePatch {
+val disableAnalyticsPatch = resourcePatch(
+    name = "Disable Firebase(Google) Analytics",
+    use = false,
+) {
     execute { context ->
         context.document["AndroidManifest.xml"].use { document ->
 
