@@ -1,9 +1,9 @@
 package io.github.bholeykabhakt.patches.autosync.purchase
 
-import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
 import app.revanced.patcher.fingerprint
 import app.revanced.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.Opcode
+import io.github.bholeykabhakt.patches.utils.returnEarly
 
 internal val isAccountTypePurchasedFingerprint = fingerprint {
     returns("Z")
@@ -30,12 +30,8 @@ val purchaseAllItemsPatch = bytecodePatch(
     val isAccountTypePurchasedMatch by isAccountTypePurchasedFingerprint()
 
     execute {
-        isAccountTypePurchasedMatch.mutableMethod.addInstructions(
-            0,
-            """
-               const/4 v0, 0x1
-               return v0
-            """
-        )
+
+        listOf(isAccountTypePurchasedMatch).returnEarly(true)
+
     }
 }

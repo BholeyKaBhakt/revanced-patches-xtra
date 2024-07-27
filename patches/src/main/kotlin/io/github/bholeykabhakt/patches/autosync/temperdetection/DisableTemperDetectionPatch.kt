@@ -1,7 +1,7 @@
 package io.github.bholeykabhakt.patches.autosync.temperdetection
 
-import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
 import app.revanced.patcher.patch.bytecodePatch
+import io.github.bholeykabhakt.patches.utils.returnEarly
 
 @Suppress("unused")
 val disableTemperDetectionPatch = bytecodePatch(
@@ -13,21 +13,10 @@ val disableTemperDetectionPatch = bytecodePatch(
     val temperDetectionVarZGetterMatch by temperDetectionVarZGetterFingerprint()
 
     execute {
-        val returnFalseInstructions = """
-               const/4 v0, 0x0
-               return v0
-            """
 
-        // d$a.f() = false (just like old z.g = false but on getter)
-        temperDetectionVarHGetterMatch.mutableMethod.addInstructions(
-            0,
-            returnFalseInstructions
-        )
+        // VarH => d$a.f() = false (just like old z.g = false but on getter)
+        // VarZ => SyncState.z() = false (just like old b0.a = false but on getter)
 
-        // SyncState.z() = false (just like old b0.a = false but on getter)
-        temperDetectionVarZGetterMatch.mutableMethod.addInstructions(
-            0,
-            returnFalseInstructions
-        )
+        listOf(temperDetectionVarHGetterMatch, temperDetectionVarZGetterMatch).returnEarly(false)
     }
 }

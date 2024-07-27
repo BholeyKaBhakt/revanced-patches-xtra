@@ -1,7 +1,7 @@
 package io.github.bholeykabhakt.patches.automate
 
-import app.revanced.patcher.extensions.InstructionExtensions.addInstruction
 import app.revanced.patcher.patch.bytecodePatch
+import io.github.bholeykabhakt.patches.utils.returnEarly
 
 @Suppress("unused")
 val bypassBlocksLimitPatch = bytecodePatch(
@@ -12,12 +12,8 @@ val bypassBlocksLimitPatch = bytecodePatch(
     val isBlockLimitReachedFingerMatch by isBlockLimitReachedFingerPrint()
 
     execute {
-        isBlockLimitReachedFingerMatch.mutableMethod.addInstruction(
-            0,
-            """
-               const/4 v0, 0x1
-               return v0
-            """
-        )
+
+        listOf(isBlockLimitReachedFingerMatch).returnEarly(true)
+
     }
 }

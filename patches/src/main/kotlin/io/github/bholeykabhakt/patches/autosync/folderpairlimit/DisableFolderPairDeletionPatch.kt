@@ -2,6 +2,7 @@ package io.github.bholeykabhakt.patches.autosync.folderpairlimit
 
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
 import app.revanced.patcher.patch.bytecodePatch
+import io.github.bholeykabhakt.patches.utils.returnEarly
 
 @Suppress("unused")
 val disableFolderPairDeletionPatch = bytecodePatch(
@@ -14,12 +15,7 @@ val disableFolderPairDeletionPatch = bytecodePatch(
 
     execute {
         // don't run the method that removes all sync pair but one
-        syncSettingsBMatch.mutableMethod.addInstructions(
-            0,
-            """
-               return-void
-            """
-        )
+        listOf(syncSettingsBMatch).returnEarly()
 
         // return PREF_LAST_UPDATED_AT time in near future
         // stops sync pair list from being cleared
