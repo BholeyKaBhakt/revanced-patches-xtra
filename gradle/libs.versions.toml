@@ -1,3 +1,4 @@
 [versions]
-revanced-patcher = "20.0.0-dev.1"
-smali = "3.0.7"
+revanced-patcher = "20.0.0"
+# Tracking https://github.com/google/smali/issues/64.
+smali = "3.0.5"
