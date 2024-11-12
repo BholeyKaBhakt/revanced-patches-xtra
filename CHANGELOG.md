@@ -1,3 +1,10 @@
+# [1.5.0-dev.2](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** update asset version and changelog ([5c7b054](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/5c7b054d8308fe75024ce801d8fa327608564595))
+
 ## [1.4.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.4.0...v1.4.1) (2024-05-26)
 
 
