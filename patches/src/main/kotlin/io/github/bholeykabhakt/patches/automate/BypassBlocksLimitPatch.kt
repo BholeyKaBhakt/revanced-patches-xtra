@@ -9,11 +9,9 @@ val bypassBlocksLimitPatch = bytecodePatch(
 ) {
     compatibleWith("com.llamalab.automate")
 
-    val isBlockLimitReachedFingerMatch by isBlockLimitReachedFingerPrint()
-
     execute {
 
-        listOf(isBlockLimitReachedFingerMatch).returnEarly(true)
+        isBlockLimitReachedFingerPrint.method.returnEarly("0x1")
 
     }
 }

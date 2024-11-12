@@ -1,3 +1,43 @@
+# [1.5.0-dev.6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.5...v1.5.0-dev.6) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** asset name fix after removing version ([1a6cbfb](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/1a6cbfb93f759ac646db01e653232436099c771a))
+
+# [1.5.0-dev.5](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.4...v1.5.0-dev.5) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** version can't be updated without semantic gradle plugin ([b9498c6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/b9498c6de7c1d3cf26e83105e93719bdc1573cf5))
+
+# [1.5.0-dev.4](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** bump semantic-release to v24.2.0 ([d5758cb](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/d5758cbddbe56f85bef036c21e8751b6b51dbc89))
+
+
+### Features
+
+* **autosync:** update patches to support autosync v7.x.x ([52c4bd6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/52c4bd62a72b38ad6e75ea97299a76fd21a02e8c))
+
+# [1.5.0-dev.3](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** gradle-semantic-release-plugin not needed ([fb49b92](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/fb49b92371d51df076b1c1efa42a6548b8254b92))
+
+# [1.5.0-dev.2](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** update asset version and changelog ([5c7b054](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/5c7b054d8308fe75024ce801d8fa327608564595))
+
 ## [1.4.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.4.0...v1.4.1) (2024-05-26)
 
 
