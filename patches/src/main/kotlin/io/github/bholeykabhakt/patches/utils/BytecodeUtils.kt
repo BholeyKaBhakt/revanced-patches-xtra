@@ -5,7 +5,6 @@ import app.revanced.patcher.util.proxy.mutableTypes.MutableMethod
 
 
 fun MutableMethod.returnEarly(retVal: String = "0x0") {
-    println(this.definingClass + this.name)
     val stringInstructions = when (this.returnType.first()) {
         'L' ->
             """

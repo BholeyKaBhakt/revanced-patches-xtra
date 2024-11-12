@@ -20,8 +20,7 @@
       "@semantic-release/git",
       {
         "assets": [
-          "CHANGELOG.md",
-          "gradle.properties",
+          "CHANGELOG.md"
         ],
         "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
