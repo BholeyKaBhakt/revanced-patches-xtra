@@ -1,3 +1,15 @@
+# [1.5.0-dev.4](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** bump semantic-release to v24.2.0 ([d5758cb](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/d5758cbddbe56f85bef036c21e8751b6b51dbc89))
+
+
+### Features
+
+* **autosync:** update patches to support autosync v7.x.x ([52c4bd6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/52c4bd62a72b38ad6e75ea97299a76fd21a02e8c))
+
 # [1.5.0-dev.3](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2024-11-12)
 
 
