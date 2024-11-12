@@ -8,8 +8,8 @@ val disableAnalyticsPatch = resourcePatch(
     name = "Disable Firebase(Google) Analytics",
     use = false,
 ) {
-    execute { context ->
-        context.document["AndroidManifest.xml"].use { document ->
+    execute {
+        document("AndroidManifest.xml").use { document ->
 
             val applicationNode =
                 document

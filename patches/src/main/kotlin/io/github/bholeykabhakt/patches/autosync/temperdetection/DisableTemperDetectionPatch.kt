@@ -9,14 +9,12 @@ val disableTemperDetectionPatch = bytecodePatch(
 ) {
     compatibleWith("com.ttxapps.autosync")
 
-    val temperDetectionVarHGetterMatch by temperDetectionVarHGetterFingerprint()
-    val temperDetectionVarZGetterMatch by temperDetectionVarZGetterFingerprint()
-
     execute {
 
         // VarH => d$a.f() = false (just like old z.g = false but on getter)
         // VarZ => SyncState.z() = false (just like old b0.a = false but on getter)
 
-        listOf(temperDetectionVarHGetterMatch, temperDetectionVarZGetterMatch).returnEarly(false)
+        temperDetectionVarHGetterFingerprint.method.returnEarly("0x0")
+        temperDetectionVarZGetterFingerprint.method.returnEarly("0x0")
     }
 }

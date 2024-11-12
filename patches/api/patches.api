@@ -19,7 +19,7 @@ public final class io/github/bholeykabhakt/patches/autosync/temperdetection/Disa
 }
 
 public final class io/github/bholeykabhakt/patches/utils/BytecodeUtilsKt {
-	public static final fun returnEarly (Ljava/util/List;Z)V
-	public static synthetic fun returnEarly$default (Ljava/util/List;ZILjava/lang/Object;)V
+	public static final fun returnEarly (Lapp/revanced/patcher/util/proxy/mutableTypes/MutableMethod;Ljava/lang/String;)V
+	public static synthetic fun returnEarly$default (Lapp/revanced/patcher/util/proxy/mutableTypes/MutableMethod;Ljava/lang/String;ILjava/lang/Object;)V
 }
 

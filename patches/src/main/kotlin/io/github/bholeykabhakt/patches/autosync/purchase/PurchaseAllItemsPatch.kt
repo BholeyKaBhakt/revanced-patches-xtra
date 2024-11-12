@@ -27,11 +27,7 @@ val purchaseAllItemsPatch = bytecodePatch(
 ) {
     compatibleWith("com.ttxapps.autosync")
 
-    val isAccountTypePurchasedMatch by isAccountTypePurchasedFingerprint()
-
     execute {
-
-        listOf(isAccountTypePurchasedMatch).returnEarly(true)
-
+        isAccountTypePurchasedFingerprint.method.returnEarly("0x1")
     }
 }

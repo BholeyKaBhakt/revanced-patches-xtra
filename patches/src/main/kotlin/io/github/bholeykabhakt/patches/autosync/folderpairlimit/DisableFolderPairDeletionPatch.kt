@@ -10,16 +10,13 @@ val disableFolderPairDeletionPatch = bytecodePatch(
 ) {
     compatibleWith("com.ttxapps.autosync")
 
-    val syncSettingsBMatch by syncSettingsBFingerprint()
-    val syncSettingsGetLastUpdatedAtMatch by syncSettingsGetLastUpdatedAtFingerprint()
-
     execute {
         // don't run the method that removes all sync pair but one
-        listOf(syncSettingsBMatch).returnEarly()
+        syncSettingsBFingerprint.method.returnEarly()
 
         // return PREF_LAST_UPDATED_AT time in near future
         // stops sync pair list from being cleared
-        syncSettingsGetLastUpdatedAtMatch.mutableMethod.addInstructions(
+        syncSettingsGetLastUpdatedAtFingerprint.method.addInstructions(
             0,
             """
                invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
