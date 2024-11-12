@@ -16,6 +16,17 @@
     ],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
+    "gradle-semantic-release-plugin",
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "gradle.properties",
+        ],
+        "message": "chore: Release v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
     [
       "@semantic-release/github",
       {
