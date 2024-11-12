@@ -1,3 +1,10 @@
+# [1.5.0-dev.6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.5...v1.5.0-dev.6) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** asset name fix after removing version ([1a6cbfb](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/1a6cbfb93f759ac646db01e653232436099c771a))
+
 # [1.5.0-dev.5](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.4...v1.5.0-dev.5) (2024-11-12)
 
 
