@@ -1,3 +1,10 @@
+# [1.5.0-dev.3](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.2...v1.5.0-dev.3) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** gradle-semantic-release-plugin not needed ([fb49b92](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/fb49b92371d51df076b1c1efa42a6548b8254b92))
+
 # [1.5.0-dev.2](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.1...v1.5.0-dev.2) (2024-11-12)
 
 
