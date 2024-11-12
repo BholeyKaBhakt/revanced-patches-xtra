@@ -1,3 +1,10 @@
+# [1.5.0-dev.5](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.4...v1.5.0-dev.5) (2024-11-12)
+
+
+### Bug Fixes
+
+* **release:** version can't be updated without semantic gradle plugin ([b9498c6](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/b9498c6de7c1d3cf26e83105e93719bdc1573cf5))
+
 # [1.5.0-dev.4](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0-dev.3...v1.5.0-dev.4) (2024-11-12)
 
 
