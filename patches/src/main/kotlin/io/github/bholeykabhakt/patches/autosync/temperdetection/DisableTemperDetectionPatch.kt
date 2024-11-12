@@ -11,10 +11,10 @@ val disableTemperDetectionPatch = bytecodePatch(
 
     execute {
 
-        // VarH => d$a.f() = false (just like old z.g = false but on getter)
-        // VarZ => SyncState.z() = false (just like old b0.a = false but on getter)
-
+        // VarH => g$a.f() = false (just like old z.g = false but on getter)
         temperDetectionVarHGetterFingerprint.method.returnEarly("0x0")
+
+        // VarZ => i.z() = false (just like old SyncState.z())
         temperDetectionVarZGetterFingerprint.method.returnEarly("0x0")
     }
 }
