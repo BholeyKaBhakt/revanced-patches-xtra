@@ -1,3 +1,18 @@
+# [1.6.0](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0...v1.6.0) (2024-11-14)
+
+
+### Bug Fixes
+
+* **autosync:** clean and more robust fingerprints ([940ef15](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/940ef1599d475030f96ff0c761031dc9cf924df9))
+* minor cleanup ([617e279](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/617e279bcfa7ce8c62166fd45f91fb9a4ea5ba99))
+
+
+### Features
+
+* **speedtest:** `Disable Logging(analytics)` Patch ([501a02f](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/501a02f661fe34f0dfe5c25f2515f42437a6d9d6))
+* **speedtest:** add `AdFree Account` Patch ([451a0d8](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/451a0d83e8df95c09299a721a6a7f7a66146eb53))
+* **utils:** support for `String` & `Long` type in `returnEarly()` method ([10b3459](https://github.com/BholeyKaBhakt/revanced-patches-xtra/commit/10b345933d1d924e1d13303ac7288f4ae1a2346e))
+
 # [1.6.0-dev.1](https://github.com/BholeyKaBhakt/revanced-patches-xtra/compare/v1.5.0...v1.6.0-dev.1) (2024-11-14)
 
 
