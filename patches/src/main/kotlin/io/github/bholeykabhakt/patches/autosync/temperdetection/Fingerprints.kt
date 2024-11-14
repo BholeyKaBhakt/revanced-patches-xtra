@@ -11,9 +11,9 @@ internal val temperDetectionVarHGetterFingerprint = fingerprint {
         Opcode.MOVE_RESULT,
         Opcode.RETURN
     )
-    custom { method, _ ->
-        method.definingClass.startsWith("Lcom/ttxapps/autosync/sync/")
-                && method.definingClass.endsWith("a;")
+    custom { method, classDef ->
+        classDef.startsWith("Lcom/ttxapps/autosync/sync/")
+                && classDef.endsWith("a;")
                 && method.name == "f"
     }
 }
@@ -26,7 +26,7 @@ internal val temperDetectionVarZGetterFingerprint = fingerprint {
         Opcode.RETURN
     )
     custom { method, classDef ->
-        method.definingClass.startsWith("Lcom/ttxapps/autosync/sync/") && method.name == "z"
+        classDef.startsWith("Lcom/ttxapps/autosync/sync/") && method.name == "z"
                 && classDef.fields.any {
             it.name == "a" && it.type == "Z"
         }
