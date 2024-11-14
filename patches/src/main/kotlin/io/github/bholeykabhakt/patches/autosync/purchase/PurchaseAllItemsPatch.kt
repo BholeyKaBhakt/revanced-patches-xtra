@@ -16,8 +16,8 @@ internal val isAccountTypePurchasedFingerprint = fingerprint {
         Opcode.INVOKE_INTERFACE,
         Opcode.MOVE_RESULT
     )
-    custom { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/iab/LicenseManager;"
+    custom { _, classDef ->
+        classDef.equals("Lcom/ttxapps/autosync/iab/LicenseManager;")
     }
 }
 

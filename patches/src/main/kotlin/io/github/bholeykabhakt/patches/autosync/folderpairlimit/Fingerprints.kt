@@ -6,16 +6,16 @@ internal val syncSettingsBFingerprint = fingerprint {
     returns("V")
     parameters()
     strings("PREF_UPGRADED_AT")
-    custom { methodDef, _ ->
-        methodDef.definingClass.startsWith("Lcom/ttxapps/autosync/sync/SyncSettings") && methodDef.name == "b"
+    custom { method, classDef ->
+        classDef.startsWith("Lcom/ttxapps/autosync/sync/SyncSettings") && method.name == "b"
     }
 }
 
 internal val syncSettingsGetLastUpdatedAtFingerprint = fingerprint {
     returns("J")
     parameters()
-    custom { methodDef, _ ->
-        methodDef.definingClass == "Lcom/ttxapps/autosync/sync/SyncSettings;"
+    custom { _, classDef ->
+        classDef.equals("Lcom/ttxapps/autosync/sync/SyncSettings;")
     }
     strings("PREF_LAST_UPDATED_AT")
 //    opcodes(
